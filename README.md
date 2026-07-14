@@ -1,5 +1,3 @@
-Here's the equivalent README adapted for your **Simple Calculator** project built with **HTML, CSS, and JavaScript** while keeping the same professional structure and style.
-
 # 🧮 Simple Calculator
 
 > A responsive web-based calculator built with HTML, CSS, and JavaScript that performs basic arithmetic operations through a clean, modern, and user-friendly interface.
