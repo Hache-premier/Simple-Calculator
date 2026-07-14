@@ -1,4 +1,4 @@
-<!Doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,69 +7,88 @@
     <script src="script.js" defer></script>
     <title>Simple Calculator</title>
   </head>
+
   <body>
     <div class="Kalculator">
       <div class="display" id="display">0</div>
-      <div class="buttons"></div>
-      <button class="btn-light-blue" onclick="clearCalculator()">
-        <span>AC</span>
-      </button>
-      <button class="btn-light-blue" onclick="toggleSign()">
-        <span>+/-</span>
-      </button>
-      <button class="btn-light-blue" onclick="handlePercent()">
-        <span>%</span>
-      </button>
-      <button class="btn-orange" onclick="setOperator('divide')">
-        <span>÷</span>
-      </button>
 
-      <button class="btn-dark-blue" onclick="appendNumber('7')">
-        <span>7</span>
-      </button>
-      <button class="btn-dark-blue" onclick="appendNumber('8')">
-        <span>8</span>
-      </button>
-      <button class="btn-dark-blue" onclick="appendNumber('9')">
-        <span>9</span>
-      </button>
-      <button class="btn-orange" onclick="setOperator('multiply')">
-        <span>×</span>
-      </button>
+      <div class="buttons">
+        <button class="btn-light-gray" onclick="clearCalculator()">
+          <span>C</span>
+        </button>
 
-      <button class="btn-dark-blue" onclick="appendNumber('4')">
-        <span>4</span>
-      </button>
-      <button class="btn-dark-blue" onclick="appendNumber('5')">
-        <span>5</span>
-      </button>
-      <button class="btn-dark-blue" onclick="appendNumber('6')">
-        <span>6</span>
-      </button>
-      <button class="btn-orange" onclick="setOperator('subtract')">
-        <span>-</span>
-      </button>
+        <button class="btn-light-gray" onclick="toggleSign()">
+          <span>+/-</span>
+        </button>
 
-      <button class="btn-dark-blue" onclick="appendNumber('1')">
-        <span>1</span>
-      </button>
-      <button class="btn-dark-blue" onclick="appendNumber('2')">
-        <span>2</span>
-      </button>
-      <button class="btn-dark-blue" onclick="appendNumber('3')">
-        <span>3</span>
-      </button>
-      <button class="btn-orange" onclick="setOperator('add')">
-        <span>+</span>
-      </button>
+        <button class="btn-light-gray" onclick="handlePercent()">
+          <span>%</span>
+        </button>
 
-      <button class="btn-dark-blue btn-zero" onclick="appendNumber('0')">
-        <span>0</span>
-      </button>
-      <button class="btn-dark-blue" onclick="appendDecimal()">
-        <span>.</span>
-      </button>
-      <button class="btn-orange" onclick="calculate()"><span>=</span></button>
+        <button class="btn-orange" onclick="setOperator('divide')">
+          <span>÷</span>
+        </button>
+
+        <button class="btn-dark-gray" onclick="appendNumber('7')">
+          <span>7</span>
+        </button>
+
+        <button class="btn-dark-gray" onclick="appendNumber('8')">
+          <span>8</span>
+        </button>
+
+        <button class="btn-dark-gray" onclick="appendNumber('9')">
+          <span>9</span>
+        </button>
+
+        <button class="btn-orange" onclick="setOperator('multiply')">
+          <span>×</span>
+        </button>
+
+        <button class="btn-dark-gray" onclick="appendNumber('4')">
+          <span>4</span>
+        </button>
+
+        <button class="btn-dark-gray" onclick="appendNumber('5')">
+          <span>5</span>
+        </button>
+
+        <button class="btn-dark-gray" onclick="appendNumber('6')">
+          <span>6</span>
+        </button>
+
+        <button class="btn-orange" onclick="setOperator('subtract')">
+          <span>-</span>
+        </button>
+
+        <button class="btn-dark-gray" onclick="appendNumber('1')">
+          <span>1</span>
+        </button>
+
+        <button class="btn-dark-gray" onclick="appendNumber('2')">
+          <span>2</span>
+        </button>
+
+        <button class="btn-dark-gray" onclick="appendNumber('3')">
+          <span>3</span>
+        </button>
+
+        <button class="btn-orange" onclick="setOperator('add')">
+          <span>+</span>
+        </button>
+
+        <button class="btn-dark-gray btn-zero" onclick="appendNumber('0')">
+          <span>0</span>
+        </button>
+
+        <button class="btn-dark-gray" onclick="appendDecimal()">
+          <span>.</span>
+        </button>
+
+        <button class="btn-orange" onclick="calculate()">
+          <span>=</span>
+        </button>
+      </div>
     </div>
   </body>
 </html>
