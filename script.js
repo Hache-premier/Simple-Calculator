@@ -1,16 +1,18 @@
 let displayValue = "0";
 let firstOperand = null;
 let operator = null;
-let waitingForSecondOperand = false;
+let waitingForOperand = false;
 
 const displayElement = document.getElementById("display");
 
 function updateDisplay() {
-  // Limit string length to prevent layout breakage, showing exponent if necessary
+  // Limit string length to 9 characters, showing exponent too if necessary
+
   if (displayValue.length > 9) {
     displayElement.innerText = Number(displayValue).toExponential(6);
   } else {
-    // Replace '.' with ',' according to standard localized iPhone layout (if desired)
+    // Replace to change the display format (if desired)
+
     displayElement.innerText = displayValue.replace(".", ",");
   }
 }
@@ -60,8 +62,9 @@ function handlePercent() {
   updateDisplay();
 }
 
-function setOperator(op) {
-  // If an operator is already pressed, compute the intermediate result
+function setOperator(op, event) {
+  // If an operator has already been pressed, compute the intermediate result
+
   if (operator !== null && !waitingForOperand) {
     calculate();
   }
@@ -70,9 +73,11 @@ function setOperator(op) {
   operator = op;
   waitingForOperand = true;
 
-  // Highlight active operator button
+  // Highlight active operator button when clicked and also remove the highlight from other operator
   resetOperatorStyles();
-  event.currentTarget.classList.add("active");
+  if (event && event.currentTarget) {
+    event.currentTarget.classList.add("active");
+  }
 }
 
 function resetOperatorStyles() {
