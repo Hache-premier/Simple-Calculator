@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="asset/style/style.css" />
+    <script src="script.js" defer></script>
     <title>Simple Calculator</title>
   </head>
 
@@ -13,17 +14,14 @@
 
       <div class="buttons">
         <button class="btn-light-gray" onclick="clearCalculator()">
-          <span>C</span>
+          <span>AC</span>
         </button>
-
         <button class="btn-light-gray" onclick="toggleSign()">
           <span>+/-</span>
         </button>
-
         <button class="btn-light-gray" onclick="handlePercent()">
           <span>%</span>
         </button>
-
         <button class="btn-orange" onclick="setOperator('divide', event)">
           <span>÷</span>
         </button>
@@ -31,15 +29,12 @@
         <button class="btn-dark-gray" onclick="appendNumber('7')">
           <span>7</span>
         </button>
-
         <button class="btn-dark-gray" onclick="appendNumber('8')">
           <span>8</span>
         </button>
-
         <button class="btn-dark-gray" onclick="appendNumber('9')">
           <span>9</span>
         </button>
-
         <button class="btn-orange" onclick="setOperator('multiply', event)">
           <span>×</span>
         </button>
@@ -47,15 +42,12 @@
         <button class="btn-dark-gray" onclick="appendNumber('4')">
           <span>4</span>
         </button>
-
         <button class="btn-dark-gray" onclick="appendNumber('5')">
           <span>5</span>
         </button>
-
         <button class="btn-dark-gray" onclick="appendNumber('6')">
           <span>6</span>
         </button>
-
         <button class="btn-orange" onclick="setOperator('subtract', event)">
           <span>-</span>
         </button>
@@ -63,15 +55,12 @@
         <button class="btn-dark-gray" onclick="appendNumber('1')">
           <span>1</span>
         </button>
-
         <button class="btn-dark-gray" onclick="appendNumber('2')">
           <span>2</span>
         </button>
-
         <button class="btn-dark-gray" onclick="appendNumber('3')">
           <span>3</span>
         </button>
-
         <button class="btn-orange" onclick="setOperator('add', event)">
           <span>+</span>
         </button>
@@ -79,11 +68,9 @@
         <button class="btn-dark-gray btn-zero" onclick="appendNumber('0')">
           <span>0</span>
         </button>
-
         <button class="btn-dark-gray" onclick="appendDecimal()">
           <span>.</span>
         </button>
-
         <button class="btn-orange" onclick="calculate()">
           <span>=</span>
         </button>
@@ -91,5 +78,3 @@
     </div>
   </body>
 </html>
-
- <script src="script.js" defer></script>
