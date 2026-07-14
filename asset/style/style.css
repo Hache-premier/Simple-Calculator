@@ -71,7 +71,7 @@ button span {
 
 /* Gray Buttons (Top Row: AC, +/-, %) */
 .btn-light-gray {
-  background-color: #a5a5a5;
+  background-color: #bf0606;
   color: #000000;
 }
 .btn-light-gray:active {
@@ -80,8 +80,8 @@ button span {
 
 /* Dark Gray Buttons (Numbers & Decimal) */
 .btn-dark-gray {
-  background-color: #333333;
-  color: #ffffff;
+  background-color: #bf0606;
+  color: #0f1a60;
 }
 .btn-dark-gray:active {
   background-color: #5c5c5c;
@@ -90,7 +90,7 @@ button span {
 /* Orange Buttons (Operators) */
 .btn-orange {
   background-color: #f09a36;
-  color: #ffffff;
+  color: #0f1a60;
 }
 .btn-orange:active,
 .btn-orange.active {
