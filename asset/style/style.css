@@ -2,9 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 html,
@@ -18,7 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  min-height: 100dvh; /* handles mobile browser UI chrome (Safari/Chrome address bar) */
+  min-height: 100dvh;
   overflow: hidden;
 }
 
@@ -34,11 +32,8 @@ body {
   height: 100dvh;
 }
 
-/* Display Screen of the simple calculator */
 .display {
   color: #fff;
-
-  /* Scales fluidly between a min and max */
   font-size: clamp(40px, 12vw, 85px);
   font-weight: 300;
   text-align: right;
@@ -49,7 +44,6 @@ body {
   line-height: 1;
 }
 
-/* Calculator's Button Grid Layout */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -64,7 +58,7 @@ button {
   font-weight: 400;
   border-radius: 50%;
   width: 100%;
-  padding-bottom: 100%; /* Makes buttons perfectly round, scales with column width */
+  padding-bottom: 100%;
   position: relative;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -77,9 +71,8 @@ button span {
   transform: translate(-50%, -50%);
 }
 
-/* Gray operators Buttons (C, +/-, %) */
 .btn-light-gray {
-  background-color: #bf0606;
+  background-color: #a5a5a5;
   color: #000;
 }
 
@@ -87,20 +80,18 @@ button span {
   background-color: #d4d4d4;
 }
 
-/* Dark Gray Buttons (Numbers & Decimal) */
 .btn-dark-gray {
-  background-color: #bf0606;
-  color: #0f1a60;
+  background-color: #333;
+  color: #fff;
 }
 
 .btn-dark-gray:active {
   background-color: #5c5c5c;
 }
 
-/* Orange Buttons (Operators) */
 .btn-orange {
-  background-color: #f09a36;
-  color: #0f1a60;
+  background-color: #ff9500;
+  color: #fff;
 }
 
 .btn-orange:active,
@@ -108,14 +99,12 @@ button span {
   background-color: #f3b668;
 }
 
-/* style for the '0' Button */
 .btn-zero {
   grid-column: span 2;
   border-radius: 40px;
   padding-bottom: 47%;
 }
 
-/* Small phones (narrow width) */
 @media (width <= 360px) {
   .buttons {
     gap: 8px;
@@ -126,7 +115,6 @@ button span {
   }
 }
 
-/* Tablets and larger phones in landscape / small tablets */
 @media (width >= 600px) {
   .kalculator {
     max-width: 420px;
@@ -138,7 +126,6 @@ button span {
   }
 }
 
-/* Desktops / large tablets */
 @media (width >= 900px) {
   .kalculator {
     max-width: 460px;
@@ -152,7 +139,6 @@ button span {
   }
 }
 
-/* shrink display so buttons stay visible */
 @media (height <= 500px) {
   .display {
     font-size: clamp(32px, 8vh, 60px);
@@ -169,7 +155,6 @@ button span {
   }
 }
 
-/* Responsive on modern phones */
 @supports (padding: max(0px)) {
   .kalculator {
     padding-left: max(clamp(12px, 4vw, 24px), env(safe-area-inset-left));

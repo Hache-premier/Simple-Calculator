@@ -1,147 +1,157 @@
-let displayValue = "0";
-let firstOperand = null;
-let operator = null;
-let waitingForOperand = false;
+let displayValue = '0'
+let firstOperand = null
+let operator = null
+let waitingForOperand = false
 
-const displayElement = document.getElementById("display");
+const displayElement = document.getElementById('display')
 
-function formatResult(value) {
-  if (value === "Error") {
-    return "Error";
+function formatResult (value) {
+  if (value === 'Error') {
+    return 'Error'
   }
 
-  const number = Number(value);
+  const number = Number(value)
 
   if (!Number.isFinite(number)) {
-    return "Error";
+    return 'Error'
   }
 
-  const absoluteValue = Math.abs(number);
+  const absoluteValue = Math.abs(number)
 
   if (
     absoluteValue >= 1e12 ||
     (absoluteValue > 0 && absoluteValue < 1e-9)
   ) {
-    return number.toExponential(6);
+    return number.toExponential(6)
   }
 
-  return Number(number.toPrecision(12)).toString();
+  return Number(number.toPrecision(12)).toString()
 }
 
-function updateDisplay() {
-  displayElement.innerText = formatResult(displayValue);
+function updateDisplay () {
+  displayElement.innerText = formatResult(displayValue)
 }
 
-function appendNumber(number) {
+function appendNumber (number) {
   if (waitingForOperand) {
-    displayValue = number;
-    waitingForOperand = false;
+    displayValue = number
+    waitingForOperand = false
   } else {
-    displayValue = displayValue === "0" ? number : displayValue + number;
+    displayValue = displayValue === '0' ? number : displayValue + number
   }
 
-  updateDisplay();
-  resetOperatorStyles();
+  updateDisplay()
+  resetOperatorStyles()
 }
 
-function appendDecimal() {
+function appendDecimal () {
   if (waitingForOperand) {
-    displayValue = "0.";
-    waitingForOperand = false;
-  } else if (!displayValue.includes(".")) {
-    displayValue += ".";
+    displayValue = '0.'
+    waitingForOperand = false
+  } else if (!displayValue.includes('.')) {
+    displayValue += '.'
   }
 
-  updateDisplay();
+  updateDisplay()
 }
 
-function clearCalculator() {
-  displayValue = "0";
-  firstOperand = null;
-  operator = null;
-  waitingForOperand = false;
+function clearCalculator () {
+  displayValue = '0'
+  firstOperand = null
+  operator = null
+  waitingForOperand = false
 
-  updateDisplay();
-  resetOperatorStyles();
+  updateDisplay()
+  resetOperatorStyles()
 }
 
-function toggleSign() {
-  if (displayValue !== "0") {
-    displayValue = displayValue.startsWith("-")
+function toggleSign () {
+  if (displayValue !== '0') {
+    displayValue = displayValue.startsWith('-')
       ? displayValue.slice(1)
-      : "-" + displayValue;
+      : '-' + displayValue
 
-    updateDisplay();
+    updateDisplay()
   }
 }
 
-function handlePercent() {
-  const value = parseFloat(displayValue) / 100;
+function handlePercent () {
+  const value = parseFloat(displayValue) / 100
 
-  displayValue = formatResult(value);
+  displayValue = formatResult(value)
 
-  updateDisplay();
+  updateDisplay()
 }
 
-function setOperator(op, event) {
+function setOperator (op, event) {
   if (operator !== null && !waitingForOperand) {
-    calculate();
+    calculate()
   }
 
-  firstOperand = parseFloat(displayValue);
-  operator = op;
-  waitingForOperand = true;
+  firstOperand = parseFloat(displayValue)
+  operator = op
+  waitingForOperand = true
 
-  resetOperatorStyles();
+  resetOperatorStyles()
 
   if (event && event.currentTarget) {
-    event.currentTarget.classList.add("active");
+    event.currentTarget.classList.add('active')
   }
 }
 
-function resetOperatorStyles() {
-  const buttons = document.querySelectorAll(".btn-orange");
+function resetOperatorStyles () {
+  const buttons = document.querySelectorAll('.btn-orange')
 
-  buttons.forEach((btn) => btn.classList.remove("active"));
+  buttons.forEach((btn) => btn.classList.remove('active'))
 }
 
-function calculate() {
+function calculate () {
   if (operator === null || waitingForOperand) {
-    return;
+    return
   }
 
-  const secondOperand = parseFloat(displayValue);
-  let result = 0;
+  const secondOperand = parseFloat(displayValue)
+  let result = 0
 
   switch (operator) {
-    case "add":
-      result = firstOperand + secondOperand;
-      break;
+    case 'add':
+      result = firstOperand + secondOperand
+      break
 
-    case "subtract":
-      result = firstOperand - secondOperand;
-      break;
+    case 'subtract':
+      result = firstOperand - secondOperand
+      break
 
-    case "multiply":
-      result = firstOperand * secondOperand;
-      break;
+    case 'multiply':
+      result = firstOperand * secondOperand
+      break
 
-    case "divide":
+    case 'divide':
       if (secondOperand === 0) {
-        displayValue = "Error";
-        updateDisplay();
-        setTimeout(clearCalculator, 1500);
-        return;
+        displayValue = 'Error'
+        updateDisplay()
+        setTimeout(clearCalculator, 1500)
+        return
       }
 
-      result = firstOperand / secondOperand;
-      break;
+      result = firstOperand / secondOperand
+      break
   }
 
-  displayValue = formatResult(result);
-  operator = null;
-  waitingForOperand = true;
+  displayValue = formatResult(result)
+  operator = null
+  waitingForOperand = true
 
-  updateDisplay();
-  resetOperatorStyles();
+  updateDisplay()
+  resetOperatorStyles()
 }
+
+window.appendNumber = appendNumber
+window.appendDecimal = appendDecimal
+window.clearCalculator = clearCalculator
+window.toggleSign = toggleSign
+window.handlePercent = handlePercent
+window.setOperator = setOperator
+window.calculate = calculate
+
+updateDisplay()
